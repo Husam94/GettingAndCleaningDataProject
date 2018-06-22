@@ -60,8 +60,7 @@ colnames(AllsubjectsMini) <- Cols
 # MAJOR GOAL: Create second data set with average of each variable
 
 AllsubjectsMiniMeans <- AllsubjectsMini %>% 
-  group_by(subject, activity) %>%
+  group_by(activity) %>%
   summarise_each(funs(mean))
 
 write.table(AllsubjectsMiniMeans, "tidy_data.txt", row.names = FALSE, quote = FALSE)
-
